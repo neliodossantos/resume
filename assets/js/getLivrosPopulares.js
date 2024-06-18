@@ -47,7 +47,7 @@ function displayBook(books, bookCarousel) {
         bookDiv.classList.add("box-livro");
         bookDiv.setAttribute("data-id", book.id); // Adiciona o data-id com o identificador do livro
         bookDiv.innerHTML = `
-            <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
+            <img src="https://neliodossantos.github.io/resume/assets/img/${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
             <div class="book-info">
                 <p class="book-title">${book.title}</p>
                 <h2 class="book-author">${book.author}</h2>
