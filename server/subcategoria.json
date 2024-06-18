@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nome" : "LITERATURA E FICÇÃO",
+        "categoria" : {
+            "id" : 1,
+            "nome" : "LITERATURA E FICÇÃO"
+        }
+    },
+    {
+        "id": 2,
+        "nome" : "LITERATURA E FICÇÃO",
+        "categoria" : {
+            "id" : 1,
+            "nome" : "LITERATURA E FICÇÃO"
+        }
+    },
+    {
+        "id": 3,
+        "nome" : "LITERATURA E FICÇÃO",
+        "categoria" : {
+            "id" : 1,
+            "nome" : "LITERATURA E FICÇÃO"
+        }
+    }
+
+]

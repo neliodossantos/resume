@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Livro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="index.html">resu<span>me</span></a>
+            </div>
+            <div class="tooltip">entrar
+                <div class="tooltiptext">
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+                    
+                    <div id="status">
+                    </div>                    
+                </div>
+            </div>
+        </header>
+        <div class="wrapper-livros">
+            <div class="wrapper-filter">
+                <h1>Categorias</h1>
+                <div class="filter-categoria"></div>
+            </div>
+            <div class="" style="">
+                <div style="display: flex; justify-content: end; position: relative;">
+                    <form method="get" style="border-radius: 10px; width: 400px;">
+                        <label for="search" style="position: absolute; right: 10px; top: 10px;">
+                            <i class='bx bx-search-alt-2'></i>
+                        </label>
+                        <input type="search" id="search" placeholder="pesquise um livro" style="width: 100%;padding: 10px;border-radius: 10px;">
+                   </form>
+                </div>
+        
+                <div class="wrapper-livro" style="padding-top: 20px;">                                  
+                    <div class="book-details" style="display: flex; gap: 15px;">
+                        <img id="book-cover" alt="Capa do Livro" style="width:400px;height:250px;">
+                        <div class="book-details-title" style="color: #fff;">
+                            <h1 id="book-title"></h1>
+                            <p id="book-author"></p>
+                            <p id="book-year"></p>
+                            <p id="book-description"></p>    
+                        </div>
+                    </div>
+
+                    <div style="color: #fff;">
+                        <h1>Resumo</h1>
+                        <p id="book-resume"></p>
+                    </div>   
+                </div>
+               
+                <div class="wrapper-livro-search">        
+                    <div class="" style="position: relative;">
+                        <div class="wrapper-box-livros">
+                            <!-- Os livros serão adicionados aqui dinamicamente -->
+                        </div>
+                    </div>     
+                </div> 
+                </div>
+            </div>
+        </div>
+
+    
+    <footer>
+        <p>Todos os direitos reservados ao Nélio dos Santos</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var params = new URLSearchParams(window.location.search);
+            var bookId = params.get('id');
+            console.log(bookId)
+
+            if (bookId) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "server/livros.json", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var books = JSON.parse(xhr.responseText);
+                        var book = books.find(b => b.id == bookId);
+
+                        if (book) {
+                            document.getElementById('book-title').textContent = book.title;
+                            document.getElementById('book-cover').src = book.coverImage;
+                            document.getElementById('book-author').textContent = 'Autor: ' + book.author;
+                            document.getElementById('book-year').textContent = 'Ano: ' + book.year;
+                            document.getElementById('book-description').textContent = book.description;
+                            document.getElementById('book-resume').innerHTML = book.resume;
+
+                        } else {
+                            alert('Livro não encontrado!');
+                        }
+                    }
+                };
+                xhr.send();
+            } else {
+                alert('ID do livro não fornecido!');
+            }
+        });
+    </script>
+    <script src="./assets/js/searchLivros.js"></script>
+    <script src="./assets/js/getCategoriaSubcategoria.js"></script>
+    <script src="./assets/js/apiFacebook.js"></script>
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+</body>
+</html>

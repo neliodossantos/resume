@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="">resu<span>me</span></a>
+            </div>
+            <div class="tooltip">entrar
+                <div class="tooltiptext">
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+                    
+                    <div id="status">
+                    </div>                    
+                </div>
+            </div>
+        </header>
+        <div class="wrapper-livros">
+            <div class="wrapper-filter">
+                <h1>Categorias</h1>
+                <div class="filter-categoria"></div>
+            </div>
+            <div class="" style="">
+                <div style="display: flex; justify-content: end; position: relative;">
+                    <form method="get" style="border-radius: 10px; width: 400px;">
+                        <label for="search" style="position: absolute; right: 10px; top: 10px;">
+                            <i class='bx bx-search-alt-2'></i>
+                        </label>
+                        <input type="search" id="search" placeholder="pesquise um livro" style="width: 100%;padding: 10px;border-radius: 10px;">
+                   </form>
+                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book-content">
+                        <h1 style="font-size: 2.4em;">Livros da Subcategoria: <span id="subcategoria-name"></span></h1>
+                    </div>
+                    <div class="wrapper-livro-search">
+                        <div style="position: relative;">
+                            <div class="wrapper-box-livros">
+                                <!-- Os livros serão adicionados aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>        
+                <div class="wrapper-livro-search">        
+                    <div class="" style="position: relative;display: grid; gap: 30px !important; grid-template-columns: repeat(auto-fit,minmax(300px,1fr));">
+                        <div class="wrapper-box-livros">
+                            <!-- Os livros serão adicionados aqui dinamicamente -->
+                        </div>
+                    </div>     
+                </div> 
+                </div>
+            </div>
+        </div>    
+    <footer>
+        <p>Todos os direitos reservados ao Nélio dos Santos</p>
+    </footer>
+
+    <script src="./assets/js/getCategoriaSubcategoria.js"></script>
+    <script src="./assets/js/getLivrosPopulares.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/searchLivros.js"></script>
+    <script src="./assets/js/apiFacebook.js"></script>
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subcategoria = urlParams.get('subcategoria');
+            document.getElementById("subcategoria-name").innerText = subcategoria;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "server/livros.json", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var books = JSON.parse(xhr.responseText);
+                    displayBooksBySubcategory(books, subcategoria);
+                }
+            };
+            xhr.send();
+        });
+
+        function displayBooksBySubcategory(books, subcategoria) {
+            var wrapperBoxLivros = document.querySelector(".wrapper-box-livros");
+            wrapperBoxLivros.innerHTML = ""; // Clear previous books
+
+            var filteredBooks = books.filter(function(book) {
+                return book.subcategoria.name === subcategoria;
+            });
+
+            filteredBooks.forEach(function(book) {
+                var bookDiv = document.createElement("div");
+                bookDiv.classList.add("box-livro");
+                bookDiv.innerHTML = `
+                    <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
+                    <h3>${book.title}</h3>
+                    <p>${book.autor}</p>
+                `;
+                wrapperBoxLivros.appendChild(bookDiv);
+            });
+        }
+    </script>
+</body>
+</html>

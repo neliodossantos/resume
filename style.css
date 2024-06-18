@@ -1,0 +1,342 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 8%;
+}
+
+.menu{
+    padding: 10px 25px;
+    background-color: rgb(240, 158, 52);
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+ }
+
+
+.wrapper_login_social_media {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.wrapper_login_social_media button {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.wrapper_login_social_media button::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.wrapper_login_social_media:hover button {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+header{
+    height: 80px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+.logo span{
+    color: rgb(240, 158, 52);
+}
+
+.book-wrapper{
+    padding: 2rem 8%;
+}
+
+
+.book-covers {
+    position: relative;
+}
+
+.book-cover {
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    position: absolute; /* Altera a posição para absoluta */
+    top: 0;
+    left: 0;
+    transition: transform 0.2s;
+    border-radius: 10px;
+}
+
+.book-cover:hover {
+    transform: scale(1.1);
+}
+
+.book-wrapper{
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.book-content{
+    color: #fff;
+}
+
+.book-content > h1 span{
+    color: rgb(240, 158, 52);
+}
+
+
+.wrapper-livro-populares{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0px;
+    margin-top: 30px;
+}
+
+.wrapper-livro-populares h1{
+    margin-top: 10px;
+    text-align: left;
+}
+
+.wrapper-filter{
+    color: #fff;
+
+}
+
+.custom-nav-buttons {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    right: 0px;
+    top: 0px;
+    justify-content: end;
+}
+.custom-nav-buttons button {
+    background-color: #F0F0F0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0px 3px;
+}
+.carousel .slick-slide {
+    padding: 0 10px;
+}
+
+.filter-categoria a{
+    font-size: 16px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.category-list, .subcategory-list {
+    margin: 10px 0;
+}
+.btn_categoria, .btn_subcategoria {
+    border: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+}
+
+.wrapper-box-livros-populares , .wrapper-box-livros-recentemente {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+    gap: 10px;
+}
+
+.wrapper-livros{
+    padding: 5rem 8%;
+}
+
+.wrapper-box-livros{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+}
+
+.box-livro{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.menu{
+    position: relative;
+}
+
+
+.book-info{
+    padding: 10px;
+    text-align: left;
+}
+
+.glide__arrow{
+    background-color: rgb(240, 158, 52) !important;
+    border: none !important;
+}
+.box-livro h2{
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+}
+
+.wrapper-livros{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 30% 70%;
+}
+
+footer{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    border-top: 2px solid rgb(240, 158, 52);
+    padding: 10px;
+}
+
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    color: #fff;
+    padding: 10px;
+    background-color: rgb(240, 158, 52);
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color:rgb(240, 158, 52);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: -84px;
+    right: -85%;
+    margin-left: -60px;
+    padding: 20px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom:63px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgb(240, 158, 52) transparent transparent transparent;
+    transform: rotate(180deg);
+    z-index: 1;
+  }
+
+  .tooltip .tooltiptext button{
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  input{
+    border: none;
+    outline: none;
+  }
+
+
+  @media (max-width:998px) {
+
+    
+    .wrapper-livros{
+        width: 100% !important;
+        grid-template-columns: 20% 80% !important;
+    }
+
+    .book-content{
+        height: auto;
+    }
+    .wrapper-livro-content{
+        padding: 30px;
+    }
+    .book-wrapper{
+        height: 800px;
+    }
+
+    .book-cover {
+        width: 200px;
+        height: 200px;
+    }
+
+  }

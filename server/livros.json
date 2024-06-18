@@ -1,0 +1,88 @@
+[
+    {
+        "id": 1,
+        "title": "Pai rico e pai pobre",
+        "author": "Robert Kiyosaki, Sharon L. Lechter",
+        "year": 1997,
+        "coverImage": "../assets/img/pai rico e pai pobre.webp",
+        "categoria": {
+            "id": 1,
+            "name": "Romance"
+        },
+        "subcategoria": {
+            "id": 1,
+            "name": "Romance"
+        },
+        "like": 100,
+        "publishedDate": "1997-04-01",
+        "resume": "Pai Rico, Pai Pobre é um livro escrito por Robert T. Kiyosaki que explora as diferentes mentalidades em relação ao dinheiro através das experiências de infância do autor com dois pais:<br><br>1. <strong>Mentalidade Financeira</strong>: Kiyosaki compara as filosofias financeiras de seu pai biológico, que era bem instruído academicamente mas tinha uma mentalidade de trabalhador assalariado (pobre), com a de seu amigo, cujo pai não tinha uma educação formal extensa, mas era um empreendedor bem-sucedido (rico).<br><br>2. <strong>Educação Financeira</strong>: Ele argumenta que o sistema educacional tradicional não ensina as habilidades necessárias para ter sucesso financeiro na vida adulta, como investimento, gestão de dinheiro e criação de ativos.<br><br>3. <strong>Ativos vs Passivos</strong>: Kiyosaki introduz a ideia de que ativos (que geram renda) são fundamentais para alcançar independência financeira, enquanto passivos (que consomem renda) diminuem a capacidade de acumular riqueza.<br><br>4. <strong>Trabalho e Emprego</strong>: O autor incentiva os leitores a saírem da mentalidade de trabalhadores assalariados e a considerarem empreendimentos e investimentos como meio de alcançar liberdade financeira.<br><br>5. <strong>Lições de Vida</strong>: O livro também aborda questões mais amplas, como a importância de assumir riscos calculados, aprender com os fracassos, e o impacto das crenças pessoais sobre o sucesso financeiro.<br><br>Pai Rico, Pai Pobre tornou-se um best-seller global por sua abordagem acessível e provocativa sobre dinheiro e finanças pessoais, desafiando os leitores a repensarem suas crenças e comportamentos em relação ao dinheiro."
+    },
+    
+    {
+        "id": 2,
+        "title": "Não é amor",
+        "author": "Ali Hazelwood",
+        "year": 2012,
+        "coverImage": "../assets/img/nao-amor-ali-hazelwood.webp",
+        "categoria" : {
+            "id": 1,
+            "name": "Romance"
+        },
+        "subcategoria" :{
+            "id": 1,
+            "name": "Romance"
+        },
+        "like" : 100,
+        "publishedDate": "2012-08-01"
+    },
+    {
+        "id": 3,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "year": 1925,
+        "coverImage": "https://example.com/covers/the-great-gatsby.jpg",
+        "categoria" : {
+            "id": 1,
+            "name": "Romance"
+        },
+        "subcategoria" :{
+            "id": 1,
+            "name": "Romance"
+        },
+        "like" : 100,
+        "publishedDate": "1925-04-10"
+    },
+    {
+        "id": 4,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "coverImage": "https://example.com/covers/pride-and-prejudice.jpg",
+        "categoria" : {
+            "id": 1,
+            "name": "Fantasia"
+        },
+        "subcategoria" :{
+            "id": 1,
+            "name": "Romance"
+        },
+        "like" : 100,
+        "publishedDate": "1813-01-28"
+    },
+    {
+        "id": 5,
+        "title": "Moby-Dick",
+        "author": "Herman Melville",
+        "year": 1851,
+        "coverImage": "https://example.com/covers/moby-dick.jpg",
+        "categoria" : {
+            "id": 1,
+            "name": "Auto-ajuda"
+        },
+        "subcategoria" :{
+            "id": 1,
+            "name": "Romance"
+        },
+        "publishedDate": "1851-10-18"
+    }
+]

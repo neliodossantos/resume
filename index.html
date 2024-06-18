@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    
+</head>
+<body>
+        <header>
+            <div class="logo">
+                <a href="">resu<span>me</span></a>
+            </div>
+            <div class="tooltip">entrar
+                <div class="tooltiptext">
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+                    
+                    <div id="status">
+                    </div>                    
+                </div>
+            </div>
+        </header>
+        <div class="book-wrapper">
+            <div class="book-content">
+                <h1 style="font-size: 3.4em;">Transforme sua leitura com o resu<span>me</span>!</h1>
+                <p>Obtenha resumos abrangentes e perspicazes dos livros mais populares e clássicos em minutos. Ideal para quem deseja aprender rapidamente e se manter informado.</p>
+            </div>
+            <div class="book-covers">
+                <img src="./assets/img/pai rico e pai pobre.webp" class="book-cover" alt="Book Cover 1">
+                <img src="./assets/img/nao-amor-ali-hazelwood.webp" class="book-cover" alt="Book Cover 1">
+                <img src="./assets/img/8-caminhos-que-levam-riqueza-pablo-marcal.webp" class="book-cover" alt="Book Cover 1">
+                <img src="./assets/img/baixar-livro-destravar-da-inteligencia-emocional-pablo-marcal-em-epub-pdf-mobi-ou-ler-online_large.webp" class="book-cover" alt="Book Cover 1">
+                <!-- Adicione mais capas de livros conforme necessário -->
+            </div>
+        </div>
+    
+    
+        <div class="wrapper-livros">
+            <div class="wrapper-filter">
+                <h1>Categorias</h1>
+                <div class="filter-categoria"></div>
+            </div>
+            <div class="wrapper-livro-content" style="">
+                <div style="display: flex; justify-content: end; position: relative;">
+                    <form method="get" style="border-radius: 10px; width: 400px;">
+                        <label for="search" style="position: absolute; right: 10px; top: 10px;">
+                            <i class='bx bx-search-alt-2'></i>
+                        </label>
+                        <input type="search" id="search" placeholder="pesquise um livro" style="width: 100%;padding: 10px;border-radius: 10px;">
+                   </form>
+                </div>
+        
+                <div class="wrapper-livro-populares">        
+                    <h1 style="color: #fff;">Populares</h1>
+                        <div class="" style="position: relative;">
+                            <div class="book-carousel wrapper-box-livros-populares">
+                                <!-- Os livros serão adicionados aqui dinamicamente -->
+                            </div>
+                            <div class="slick-arrows">
+                                <button class="slick-prev slick-prev1"><i class='bx bx-chevron-left' style="font-size: 30px;"></i></button>
+                                <button class="slick-next slick-next1"><i class='bx bx-chevron-right' style="font-size: 30px;"></i></button>
+                            </div>
+                        </div>
+                        
+                </div>
+                <div class="wrapper-livros-recentemente">        
+                    <h1 style="color: #fff;">Publicados Recentemente</h1>
+                        <div class="" style="position: relative;">
+                            <div class="book-recente-carousel wrapper-box-livros-recentemente">
+                                <!-- Os livros serão adicionados aqui dinamicamente -->
+                            </div>
+                            <div class="slick-arrows">
+                                <button class="slick-prev slick-prev2"><i class='bx bx-chevron-left' style="font-size: 30px;"></i></button>
+                                <button class="slick-next slick-next2"><i class='bx bx-chevron-right' style="font-size: 30px;"></i></button>
+                            </div>
+                        </div>
+                        
+                </div> 
+
+                <div class="wrapper-livro-search">        
+                        <div class="" style="position: relative;">
+                            <div class="wrapper-box-livros">
+                                <!-- Os livros serão adicionados aqui dinamicamente -->
+                            </div>
+                        </div>
+                        
+                </div> 
+                </div>
+            </div>
+
+    
+    <footer>
+        <p>Todos os direitos reservados ao Nélio dos Santos</p>
+    </footer>
+    <script>
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/searchLivros.js"></script>
+    <script src="./assets/js/getCategoriaSubcategoria.js"></script>
+    <script src="./assets/js/getLivrosPopulares.js"></script>
+    <script src="./assets/js/getLivrosRecente.js"></script>
+    <script src="./assets/js/apiFacebook.js"></script>
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+</body>
+</html>
