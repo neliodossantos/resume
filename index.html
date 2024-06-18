@@ -18,13 +18,17 @@
             <div class="logo">
                 <a href="">resu<span>me</span></a>
             </div>
+             <div id="user-info" style="display: none;">
+                <img id="user-photo" src="" alt="User Photo">
+                <span id="user-name"></span>
+            </div>
             <div class="tooltip">entrar
                 <div class="tooltiptext">
-                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                    </fb:login-button>
-                    
-                    <div id="status">
-                    </div>                    
+                    <!-- Botão de login com Facebook -->
+                    <button onclick="facebookLogin()" style="background-color: #4267B2; color: white; padding: 10px; border: none; cursor: pointer;">
+                        Login com Facebook
+                    </button>
+                    <div id="status"></div>                    
                 </div>
             </div>
         </header>
