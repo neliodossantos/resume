@@ -50,7 +50,7 @@ function displayBooks(books, bookCarousel) {
     books.forEach(function(book) {
         var bookDiv = document.createElement("div");
         bookDiv.classList.add("box-livro");
-        bookDiv.setAttribute("data-id", book.id); // Adiciona o data-id com o identificador do livro
+        bookDiv.setAttribute("data-id", book.id); // Adiciona o data-id com o identificador do livro   
         bookDiv.innerHTML = `
             <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
             <div class="book-info">
@@ -61,10 +61,11 @@ function displayBooks(books, bookCarousel) {
             </div>`;
         bookCarousel.appendChild(bookDiv);
 
-         // Adiciona o evento de clique
+        // Adiciona o evento de clique
         bookDiv.addEventListener('click', function() {
             var bookId = this.getAttribute('data-id');
             window.location.href = `livro.html?id=${bookId}`; // Redireciona para a página de detalhes
         });
     });
 }
+
