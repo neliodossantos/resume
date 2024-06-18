@@ -59,5 +59,11 @@ function displayBooks(books, bookCarousel) {
                 <p class="book-published-date">Publicado em: ${new Date(book.publishedDate).toLocaleDateString()}</p>
             </div>`;
         bookCarousel.appendChild(bookDiv);
+
+         // Adiciona o evento de clique
+        bookDiv.addEventListener('click', function() {
+            var bookId = this.getAttribute('data-id');
+            window.location.href = `livro.html?id=${bookId}`; // Redireciona para a página de detalhes
+        });
     });
 }
