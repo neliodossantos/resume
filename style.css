@@ -206,6 +206,11 @@ header{
     background-color: #fff;
     cursor: pointer;
     margin: 5px;
+    border-radius: 3px;
+}
+
+.box-livro img{
+    border-radius: 3px;
 }
 
 .menu{
