@@ -2,9 +2,9 @@
     {
         "id": 1,
         "title": "Pai rico e pai pobre",
-        "author": "Robert Kiyosaki, Sharon L. Lechter",
+        "author": "Robert Kiyosaki, Sharon L.L",
         "year": 1997,
-        "coverImage": "../assets/img/pai rico e pai pobre.webp",
+        "coverImage": "pai rico e pai pobre.webp",
         "categoria": {
             "id": 1,
             "name": "Romance"
@@ -23,7 +23,7 @@
         "title": "Não é amor",
         "author": "Ali Hazelwood",
         "year": 2012,
-        "coverImage": "../assets/img/nao-amor-ali-hazelwood.webp",
+        "coverImage": "nao-amor-ali-hazelwood.webp",
         "categoria" : {
             "id": 1,
             "name": "Romance"
@@ -37,37 +37,37 @@
     },
     {
         "id": 3,
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "year": 1925,
-        "coverImage": "https://example.com/covers/the-great-gatsby.jpg",
+        "title": "Steve Jobs - a Biografia",
+        "author": "Walter Isaacson",
+        "year": 2011,
+        "coverImage": "Steve-Jobs-a-Biografia.jpg",
         "categoria" : {
             "id": 1,
-            "name": "Romance"
+            "name": "Literatura e Ficção"
         },
         "subcategoria" :{
             "id": 1,
-            "name": "Romance"
+            "name": "Bibliografia e Memórias"
         },
-        "like" : 100,
-        "publishedDate": "1925-04-10"
+        "like" : 200,
+        "publishedDate": "2024-04-10"
     },
     {
         "id": 4,
-        "title": "Pride and Prejudice",
-        "author": "Jane Austen",
-        "year": 1813,
-        "coverImage": "https://example.com/covers/pride-and-prejudice.jpg",
+        "title": "A Morte de Deus na Cultura",
+        "author": "Terry Eagleton",
+        "year": 2014,
+        "coverImage": "baixar-livro-morte-de-deus-na-cultura.webp",
         "categoria" : {
             "id": 1,
-            "name": "Fantasia"
+            "name": "TÉCNICOS E ACADÊMICOS"
         },
         "subcategoria" :{
             "id": 1,
-            "name": "Romance"
+            "name": "Artes e Música"
         },
         "like" : 100,
-        "publishedDate": "1813-01-28"
+        "publishedDate": "2016-01-28"
     },
     {
         "id": 5,
