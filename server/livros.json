@@ -4,7 +4,7 @@
         "title": "Pai rico e pai pobre",
         "author": "Robert Kiyosaki, Sharon L.L",
         "year": 1997,
-        "coverImage": "pai rico e pai pobre.webp",
+        "coverImage": "https://neliodossantos.github.io/resume/assets/img/pai rico e pai pobre.webp",
         "categoria": {
             "id": 1,
             "name": "Romance"
@@ -23,7 +23,7 @@
         "title": "Não é amor",
         "author": "Ali Hazelwood",
         "year": 2012,
-        "coverImage": "nao-amor-ali-hazelwood.webp",
+        "coverImage": "https://neliodossantos.github.io/resume/assets/img/nao-amor-ali-hazelwood.webp",
         "categoria" : {
             "id": 1,
             "name": "Romance"
@@ -40,7 +40,7 @@
         "title": "Steve Jobs - a Biografia",
         "author": "Walter Isaacson",
         "year": 2011,
-        "coverImage": "Steve-Jobs-a-Biografia.jpg",
+        "coverImage": "https://neliodossantos.github.io/resume/assets/img/Steve-Jobs-a-Biografia.jpg",
         "categoria" : {
             "id": 1,
             "name": "Literatura e Ficção"
