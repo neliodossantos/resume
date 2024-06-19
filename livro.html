@@ -56,17 +56,20 @@
         
                 <div class="wrapper-livro" style="padding-top: 20px;">                                  
                     <div class="book-details" style="display: flex; gap: 15px;">
-                        <img id="book-cover" alt="Capa do Livro" style="width:400px;height:250px;">
+                        <img id="book-cover" alt="Capa do Livro" style="width:400px;height:350px;">
                         <div class="book-details-title" style="color: #fff;">
                             <h1 id="book-title"></h1>
                             <p id="book-author"></p>
                             <p id="book-year"></p>
                             <p id="book-description"></p>    
+                            <a id="book-link" style="display: flex; gap: 10px; align-items: center; cursor: pointer; background-color: #03ac28; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; width: 200px;" >Compre o livro
+                                <!-- <i class='bx bx-down-arrow-circle'></i> -->
+                                <i class='bx bxl-amazon' style="font-size: 30px;"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div style="color: #fff;">
-                        <h1>Resumo</h1>
                         <p id="book-resume"></p>
                     </div>   
                 </div>
@@ -107,6 +110,11 @@
                             document.getElementById('book-year').textContent = 'Ano: ' + book.year;
                             document.getElementById('book-description').textContent = book.description;
                             document.getElementById('book-resume').innerHTML = book.resume;
+                            document.getElementById('book-link').addEventListener('click',(event) =>{
+                                event.preventDefault();
+                                // window.location.href = "https://www.wook.pt/pesquisa?keyword=" + book.isbn;
+                                window.location.href = "https://www.amazon.com.br/s?k=" + book.isbn;
+                            })
 
                         } else {
                             alert('Livro não encontrado!');
