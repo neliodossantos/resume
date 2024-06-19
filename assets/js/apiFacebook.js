@@ -39,8 +39,9 @@
   
           // Atualiza a imagem e o nome do usuário no header
           document.getElementById('user-photo').src = response.picture.data.url;
-          document.getElementById('user-name').textContent = "Olá" + response.name;
-          document.getElementById('user-info').style.display = 'block';
+          document.getElementById('user-name').textContent = " Olá  " + response.name;
+          document.getElementById('user-info').style.display = 'flex';
+      
   
           document.querySelector('.tooltip').style.display = 'none';
           document.querySelector('.tooltiptext').style.display = 'none';
