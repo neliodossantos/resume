@@ -42,8 +42,9 @@
           document.getElementById('user-name').textContent = response.name;
           document.getElementById('user-info').style.display = 'block';
   
+          document.querySelector('.tooltip .tooltiptext').style.display = 'none';
           // Oculta o botão de login após o login bem-sucedido
-          document.querySelector('.tooltip .tooltiptext').innerHTML = '<p>Oi, ' + response.name + '!</p>';
+          document.getElementById('user-info')..innerHTML = '<p>Oi, ' + response.name + '!</p>';
       });
    
   }
