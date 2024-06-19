@@ -30,12 +30,20 @@
       statusChangeCallback(response);        // Returns the login status.
     });
   };
- 
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
+   function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', { fields: 'name,email,picture.width(150)' }, function(response) {
+          console.log('Successful login for: ' + response.name);
+          console.log('Email: ' + response.email);
+          console.log('Picture URL: ' + response.picture.data.url);
+  
+          // Atualiza a imagem e o nome do usuário no header
+          document.getElementById('user-photo').src = response.picture.data.url;
+          document.getElementById('user-name').textContent = response.name;
+          document.getElementById('user-info').style.display = 'block';
+  
+          // Oculta o botão de login após o login bem-sucedido
+          document.querySelector('.tooltip .tooltiptext').innerHTML = '<p>Oi, ' + response.name + '!</p>';
+      });
+   
   }
