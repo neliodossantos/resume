@@ -16,6 +16,18 @@
     });
   }
 
+  function logout() {
+    FB.logout(function(response) {
+        // Limpa o conteúdo do usuário no header
+        document.getElementById('user-photo').src = '';
+        document.getElementById('user-name').textContent = '';
+        document.getElementById('user-info').style.display = 'none';    
+        document.querySelector('.tooltip').style.display = 'block';
+        document.querySelector('.tooltiptext').style.display = 'block';
+         document.getElementById('logout-btn').style.display = 'none';    
+        console.log('User logged out successfully');
+    });
+
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -45,7 +57,7 @@
   
           document.querySelector('.tooltip').style.display = 'none';
           document.querySelector('.tooltiptext').style.display = 'none';
-       
+           document.getElementById('logout-btn').style.display = 'block';    
       });
    
   }
