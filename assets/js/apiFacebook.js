@@ -39,14 +39,12 @@
   
           // Atualiza a imagem e o nome do usuário no header
           document.getElementById('user-photo').src = response.picture.data.url;
-          document.getElementById('user-name').textContent = response.name;
+          document.getElementById('user-name').textContent = "Olá" + response.name;
           document.getElementById('user-info').style.display = 'block';
   
           document.querySelector('.tooltip').style.display = 'none';
           document.querySelector('.tooltiptext').style.display = 'none';
        
-          // Oculta o botão de login após o login bem-sucedido
-          document.getElementById('user-info')..innerHTML = '<p>Oi, ' + response.name + '!</p>';
       });
    
   }
