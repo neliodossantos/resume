@@ -1,58 +1,56 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "server/livros.json", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var books = JSON.parse(xhr.responseText);
-            const divLivrosPopulares  = document.querySelector('.wrapper-livro-populares');
-            const divLivrosRecentemente  =  document.querySelector('.wrapper-livros-recentemente');
-            const divLivrosSearch  =  document.querySelector('.wrapper-livro-search');
+$(document).ready(function() {
+    $.ajax({
+        url: "server/livros.json",
+        type: "GET",
+        dataType: "json",
+        success: function(books) {
+            const $divLivrosPopulares = $('.wrapper-livro-populares');
+            const $divLivrosRecentemente = $('.wrapper-livros-recentemente');
+            const $divLivrosSearch = $('.wrapper-livro-search');
+            const $bookList = $('.wrapper-box-livros');
 
-            
-            var bookList = document.querySelector(".wrapper-box-livros");
             // Adiciona o evento de busca
-            document.getElementById('search').addEventListener('input', function(event) {
+            $('#search').on('input', function(event) {
                 var searchTerm = event.target.value.toLowerCase();
 
-                if(searchTerm.length > 0){
-                    divLivrosPopulares.style.display = 'none';
-                    divLivrosRecentemente.style.display = 'none';
-                    divLivrosSearch.style.display = 'block';
+                if (searchTerm.length > 0) {
+                    $divLivrosPopulares.hide();
+                    $divLivrosRecentemente.hide();
+                    $divLivrosSearch.show();
+
                     var filteredBooks = books.filter(function(book) {
                         return book.title.toLowerCase().includes(searchTerm) || 
                                book.author.toLowerCase().includes(searchTerm);
                     });
-                    displayBooks(filteredBooks, bookList);    
-                }else{
-                    divLivrosPopulares.style.display = 'block';
-                    divLivrosRecentemente.style.display = 'block';
-                    divLivrosSearch.style.display = 'none';
-
+                    displayBooks(filteredBooks, $bookList);
+                } else {
+                    $divLivrosPopulares.show();
+                    $divLivrosRecentemente.show();
+                    $divLivrosSearch.hide();
                 }
             });
         }
-    };
-    xhr.send();
+    });
 });
 
-function displayBooks(books, bookList) {
-    bookList.innerHTML = ''; // Limpa a lista antes de exibir os livros filtrados
-    books.forEach(function(book) {
-        var bookDiv = document.createElement("div");
-        bookDiv.classList.add("box-livro");
-        bookDiv.innerHTML = `
+function displayBooks(books, $bookList) {
+    $bookList.empty(); // Limpa a lista antes de exibir os livros filtrados
+    $.each(books, function(index, book) {
+        var $bookDiv = $("<div>").addClass("box-livro");
+        $bookDiv.html(`
             <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
             <div class="book-info">
                 <p class="book-title">${book.title}</p>
                 <h2 class="book-author">${book.author}</h2>
                 <p class="book-year">Ano: ${book.year}</p>
-            </div>`;
-        bookList.appendChild(bookDiv);
-    });
+            </div>
+        `);
+        $bookList.append($bookDiv);
 
-    // Adiciona o evento de clique
-    bookDiv.addEventListener('click', function() {
-        var bookId = this.getAttribute('data-id');
-        window.location.href = `livro.html?id=${bookId}`; // Redireciona para a página de detalhes
+        // Adiciona o evento de clique
+        $bookDiv.on('click', function() {
+            var bookId = $(this).attr('data-id');
+            window.location.href = `livro.html?id=${bookId}`; // Redireciona para a página de detalhes
+        });
     });
 }

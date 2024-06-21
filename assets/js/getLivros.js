@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "server/livros.json", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var books = JSON.parse(xhr.responseText);
-            var bookList = document.querySelector(".wrapper-box-livros");
+$(document).ready(function() {
+    $.ajax({
+        url: "server/livros.json",
+        method: "GET",
+        success: function(data) {
+            var books = data;
+            var bookList = $(".wrapper-box-livros");
             displayBooks(books, bookList);
-            // Adiciona o evento de busca
-            document.getElementById('search').addEventListener('input', function(event) {
+            // Add search event
+            $('#search').on('input', function(event) {
                 var searchTerm = event.target.value.toLowerCase();
                 var filteredBooks = books.filter(function(book) {
                     return book.title.toLowerCase().includes(searchTerm) || 
@@ -16,22 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 displayBooks(filteredBooks, bookList);
             });
         }
-    };
-    xhr.send();
+    });
 });
 
 function displayBooks(books, bookList) {
-    bookList.innerHTML = ''; // Limpa a lista antes de exibir os livros filtrados
+    bookList.empty(); // Clear the list before displaying filtered books
     books.forEach(function(book) {
-        var bookDiv = document.createElement("div");
-        bookDiv.classList.add("box-livro");
-        bookDiv.innerHTML = `
+        var bookDiv = $("<div>").addClass("box-livro").html(`
             <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
             <div class="book-info">
                 <p class="book-title">${book.title}</p>
                 <h2 class="book-author">${book.author}</h2>
                 <p class="book-year">Ano: ${book.year}</p>
-            </div>`;
-        bookList.appendChild(bookDiv);
+            </div>`);
+        bookList.append(bookDiv);
     });
 }

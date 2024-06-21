@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "server/livros.json", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var books = JSON.parse(xhr.responseText);
+$(document).ready(function() {
+    $.ajax({
+        url: "server/livros.json",
+        method: "GET",
+        success: function(data) {
+            var books = data;
 
             var popularesLivros = books.filter(x => x.like >= 100);
             console.log(popularesLivros);
-            var bookCarousel = document.querySelector(".book-carousel");
+            var bookCarousel = $(".book-carousel");
 
             displayBook(popularesLivros, bookCarousel);
 
@@ -36,29 +36,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 ]
             });
         }
-    };
-    xhr.send();
+    });
 });
 
 function displayBook(books, bookCarousel) {
-    bookCarousel.innerHTML = ''; // Limpa a lista antes de exibir os livros filtrados
+    bookCarousel.empty(); // Clear the list before displaying filtered books
     books.forEach(function(book) {
-        var bookDiv = document.createElement("div");
-        bookDiv.classList.add("box-livro");
-        bookDiv.setAttribute("data-id", book.id); // Adiciona o data-id com o identificador do livro
-        bookDiv.innerHTML = `
+        var bookDiv = $("<div>").addClass("box-livro").attr("data-id", book.id).html(`
             <img src="${book.coverImage}" alt="Capa de ${book.title}" class="cover-image" style="width:100%;height:250px;">
             <div class="book-info">
                 <p class="book-title">${book.title}</p>
                 <h2 class="book-author">${book.author}</h2>
                 <p class="book-year">Ano: ${book.year}</p>
-            </div>`;
-        bookCarousel.appendChild(bookDiv);
+            </div>`);
+        bookCarousel.append(bookDiv);
 
-        // Adiciona o evento de clique
-        bookDiv.addEventListener('click', function() {
-            var bookId = this.getAttribute('data-id');
-            window.location.href = `livro.html?id=${bookId}`; // Redireciona para a página de detalhes
+        // Add click event
+        bookDiv.on('click', function() {
+            var bookId = $(this).data('id');
+            window.location.href = `livro.html?id=${bookId}`; // Redirect to the detail page
         });
     });
 }
